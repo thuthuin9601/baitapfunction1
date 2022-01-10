@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Length calculation units converter</h1>
+    <table>
+        <tr>
+            <th>Meters to Feet</th>
+            <td><input type="text" id="meters" placeholder="insert Meters"></td>
+            <td><button onclick="convertM()" >Convert</button></td>
+            <td><div id="result1"></div></td>
+        </tr>
+        <tr>
+            <th>Feet to Meters</th>
+            <td><input type="text" id="feet" placeholder="insert Feet"></td>
+            <td><button onclick="convertF()" >Convert</button></td>
+            <td><div id="result2"></div></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function MeterToFoot(meter){
+        let foot = 3.279 * meter;
+        return foot; 
+    }
+    function FootToMeter(foot){
+        let meter = 0.305 * foot;
+        return meter
+    }
+    function convertM(){
+        let m=Number(document.getElementById('meters').value);
+        let result1= m+' meters ='+MeterToFoot(m)+' feet';
+        document.getElementById('result1').innerHTML=result1;
+    }
+    function convertF(){
+        let f=Number(document.getElementById('feet').value);
+        let result2= f+' feet ='+FootToMeter(f)+' meters';
+        document.getElementById('result2').innerHTML=result2;
+    }
+</script>
